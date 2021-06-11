@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Log in to continue{% endblock %}
+
+{% block body %}
+    <form method="post">
+        {% if error %}
+            <div id="alert" class="alert">
+                <h3>{{ error.messageKey|trans(error.messageData, 'security') }}</h3>
+                <p>(Click to close)</p>
+            </div>
+        {% endif %}
+
+        <h1>Sign In 🦒</h1>
+        <label for="inputUsername">Username</label>
+        <input type="text" value="{{ last_username }}" placeholder="Your name" name="username" id="inputUsername" class="form-control" autocomplete="username" required autofocus>
+        <label for="inputPassword">Password</label>
+        <input type="password" placeholder="Your password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required>
+
+        <button type="submit">
+            Sign in
+        </button>
+    </form>
+{% endblock %}

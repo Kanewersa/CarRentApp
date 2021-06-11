@@ -1,0 +1,29 @@
+{% extends 'page/base.html.twig' %}
+
+{% block title %}Moje rezerwacje{% endblock %}
+
+{% block body %}
+    <div class="banner">
+        <img src="../images/car.jpg" alt="Banner">
+        <div class="content">
+            <div class="text">
+                Moje rezerwacje
+            </div>
+        </div>
+    </div>
+    <section>
+        <h1 class="title">Rezerwacje</h1>
+        <hr>
+        <div class="reservations">
+            {% for reservation in reservations %}
+                <div class="reservation-box">
+                    <h1>{{ reservation.car.manufacturer }} {{ reservation.car.model }}</h1>
+                    <h3>Od: {{ reservation.pickupDate|date('Y-m-d') }}</h3>
+                    <h3>Do: {{ reservation.returnDate|date('Y-m-d') }}</h3>
+                </div>
+            {% endfor %}
+        </div>
+    </section>
+
+
+{% endblock %}

@@ -1,0 +1,372 @@
+@import "alert.css";
+
+body {
+    margin: 0;
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    display: flex;
+    background-color: white;
+    box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.4);
+    transition: background-color 0.2s;
+    z-index: 1000;
+}
+
+nav img {
+    width: max-content;
+    height: max-content;
+    align-self: center;
+    margin-left: 12px;
+}
+
+nav a {
+    align-self: center;
+    font-size: 24px;
+    letter-spacing: 0.025em;
+    color: #1a1a1a;
+    margin-left: 6px;
+    text-decoration: none;
+    transition: color .2s;
+}
+
+nav ul {
+    display: flex;
+    width: 70%;
+    list-style-type: none;
+    justify-content: flex-end;
+}
+
+nav ul li {
+    padding: 6px 12px;
+    align-self: center;
+    float: left;
+    color: #1A1A1AFF;
+    transition: color 0.2s;
+}
+
+nav ul li:hover ul {
+    display: grid;
+}
+
+nav ul li ul {
+    z-index: 10;
+    position: absolute;
+    background: white;
+    display: none;
+    width: inherit;
+    padding: 0;
+    transition: background 0.2s;
+    box-shadow: 0 10px 14px -1px rgba(0, 0, 0, 0.6);
+}
+
+nav ul li ul li {
+    z-index: 10;
+    justify-self: center;
+    padding: 16px 24px;
+}
+
+nav ul li a {
+    color: #1a1a1a;
+    text-decoration: none;
+    letter-spacing: 0.05em;
+    display: inline-block;
+    padding: 12px 22px;
+    position: relative;
+    transition: color 0.2s;
+}
+
+nav ul li a:hover {
+    cursor: pointer;
+}
+
+nav ul li a:after {
+    bottom: 0;
+    content: "";
+    display: block;
+    height: 2px;
+    left: 50%;
+    position: absolute;
+    background: #1A1A1AFF;
+    transition: width 0.3s ease 0s, left 0.3s ease 0s;
+    width: 0;
+}
+
+nav ul li a:hover:after {
+    width: 100%;
+    left: 0;
+}
+
+nav.scrolled {
+    background: #1A1A1AFF;
+}
+
+nav.scrolled a {
+    color: white;
+}
+
+nav.scrolled ul li {
+    color: white;
+}
+
+nav.scrolled ul li ul {
+    background: black;
+}
+
+nav.scrolled ul li a {
+    color: white;
+}
+
+nav.scrolled ul li a:after {
+    background: white;
+}
+
+main .banner {
+    width: 100%;
+    height: 1000px;
+}
+
+main .banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.8);
+}
+
+main .banner .content {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 320px;
+    width: 100%;
+    height: 450px;
+}
+
+main .banner .content .search {
+    border-radius: 2px;
+    left: 120px;
+    min-width: 620px;
+    height: 100%;
+    margin: 0 100px 0 100px;
+    background-color: white;
+}
+
+main .banner .content .text {
+    font-size: 66px;
+    margin: 0 10%;
+    width: 540px;
+    color: white;
+    text-shadow: 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black;
+}
+
+.search-form {
+    position: relative;
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 2px;
+    height: 100%;
+}
+
+.search-form .inputs {
+    padding: 24px 40px 0 40px;
+    display: flex;
+    flex-direction: column;
+}
+
+.search-form input {
+    padding: 20px 40px;
+    margin: 0 0 30px 0;
+    font-size: 20px;
+}
+
+.search-form button {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    border: none;
+    border-top: 1px solid #c2c2c2;
+    background-color: lightblue;
+    color: white;
+    font-size: 24px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: background-color .3s;
+}
+
+.search-form button:after {
+    content: '';
+    display: inline-block;
+    margin: 0 0 0 200px;
+    width: 24px;
+    height: 24px;
+    background: url(../images/chevron-right.svg);
+}
+
+.search-form button:hover {
+    background-color: lightskyblue;
+    cursor: pointer;
+}
+
+section {
+    margin: 80px 0 0 0;
+}
+
+section:hover hr {
+    width: 16%;
+}
+
+section .reservations {
+    margin: 0 400px;
+}
+
+.title {
+    font-size: 44px;
+    text-align: center;
+}
+
+hr {
+    width: 8%;
+    transition: width 0.8s;
+}
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 80px 4%;
+}
+
+.card {
+    margin: 20px 40px;
+    max-width: 28%;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.card img {
+    width: 100%;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.card .content {
+    position: relative;
+    text-align: left;
+    height: 180px;
+    margin: 10px 20px;
+}
+
+.card .content h3 {
+    font-size: 22px;
+    margin: 0;
+}
+
+.card .content a {
+    position: absolute;
+    padding: 10px 20px;
+    background-color: lightblue;
+    color: white;
+    font-size: 18px;
+    text-transform: uppercase;
+    border: 0;
+    bottom: 20px;
+    right: 0;
+    transition: background-color .3s;
+}
+
+.card .content a:hover {
+    background-color: lightskyblue;
+    cursor: pointer;
+}
+
+.card .content a:after {
+    content: '';
+    display: inline-block;
+    margin: 0 0 0 4px;
+    width: 20px;
+    height: 20px;
+    background: url(../images/chevron-right.svg);
+}
+
+.card .content h2 {
+    font-size: 20px;
+    text-align: right;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0 16px 0 0;
+}
+
+.card .content p {
+    font-size: 18px;
+    margin: 22px 0;
+}
+
+.card .content p img {
+    width: 20px;
+}
+
+.card .content .availability {
+    position: absolute;
+    top: 76px;
+    right: -8px;
+}
+
+.card .content .availability h4 {
+    font-size: 18px;
+    margin: 30px;
+    display: inline;
+}
+
+.card .content .availability img {
+    position: absolute;
+    right: 2px;
+    bottom: -2px;
+    width: 24px;
+}
+
+.reservation {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.reservation form {
+    display: flex;
+    flex-direction: column;
+    margin: 0 300px 200px 0;
+}
+
+.reservation label {
+    color: #232323;
+    margin: 0 12px 0 4px;
+}
+
+.reservation input {
+    width: 400px;
+    padding: 10px 20px;
+    margin: 4px 0 8px 0;
+}
+
+.reservation button {
+    color: white;
+    text-transform: uppercase;
+    padding: 10px 20px;
+    margin: 20px 164px 0 164px;
+    background-color: lightblue;
+    border: 1px solid #a0a0a0;
+    transition: background-color .3s;
+}
+
+.reservation button:hover {
+    background-color: lightskyblue;
+    cursor: pointer;
+}

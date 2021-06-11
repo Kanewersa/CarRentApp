@@ -1,0 +1,49 @@
+{% extends 'page/base.html.twig' %}
+
+{% block title %}CaRent PL{% endblock %}
+
+{% block body %}
+    <div class="banner">
+        <img src="../images/car.jpg" alt="Banner">
+        <div class="content">
+            <div class="text">
+                {{ car.manufacturer }} {{ car.model }}
+            </div>
+        </div>
+    </div>
+
+    <h1 class="title">Wybrany samochód</h1>
+    <div class="reservation">
+        <div class="card">
+            <img src="../images/car.jpg">
+            <div class="content">
+                <h3>{{ car.manufacturer }} {{ car.model }}</h3>
+                <p>
+                    <img src="../images/filter.svg">
+                    {{ car.fuelType }}
+                </p>
+                <p>
+                    <img src="../images/tool.svg">
+                    {{ car.gearbox }}
+                </p>
+                <p>
+                    <img src="../images/user.svg">
+                    {{ car.seats }}-osobowy
+                </p>
+                <h2>PLN 119 <br> za dzień</h2>
+                <div class="availability">
+                    <h4>Dostępny</h4><img src="../images/check.svg">
+                </div>
+            </div>
+        </div>
+        <div>
+            {{ form(form) }}
+        </div>
+    </div>
+
+
+
+
+
+
+{% endblock %}

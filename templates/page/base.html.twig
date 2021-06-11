@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html class="h-100" lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}CaRent PL{% endblock %}</title>
+    {% block stylesheets %}
+        <link href="../css/main.css" rel="stylesheet">
+    {% endblock %}
+</head>
+<body class="d-flex flex-column h-100">
+
+<header>
+    {% block navbar %}
+        <nav id="nav-bar">
+            <img src="../images/dribbble.svg" alt="Icon">
+            <a href="/">CaRent PL</a>
+            <ul>
+                <li>
+                    <a aria-current="page" href="/">Strona główna</a>
+                </li>
+                <li>
+                    <a href="/reservations">Moje rezerwacje</a>
+                </li>
+                <li>
+                    <a href="/logout">Wyloguj</a>
+                </li>
+            </ul>
+        </nav>
+    {% endblock %}
+</header>
+
+{% if error is defined and error %}
+    <div id="alert" class="alert">
+        <h3>{{ error }}</h3>
+        <p>(Click to close)</p>
+    </div>
+{% endif %}
+
+<!-- Begin page content -->
+<main>
+    {% block body %}
+    {% endblock %}
+</main>
+
+</body>
+<script src="../js/main.js" type="text/javascript"></script>
+<script src="../js/alert.js" type="text/javascript"></script>
+</html>
